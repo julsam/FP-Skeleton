@@ -7,9 +7,7 @@ package
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.utils.Data;
-	
-	[SWF(width="640", height="480", backgroundColor="#000000")]
-	
+		
 	public class Main extends Engine
 	{
 		

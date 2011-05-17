@@ -8,6 +8,8 @@ package
 		public static var volumeMusic:Number;
 		public static var volumeSound:Number;
 		
+		// public static var mSoundMgr:SoundMgr = new SoundMgr();
+		
 		
 		public static const tileSize:int = 24;
 	}

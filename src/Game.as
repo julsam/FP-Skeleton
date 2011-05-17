@@ -23,6 +23,8 @@ package
 			FP.width = G.screenWidth;
 			FP.height = G.screenHeight;
 			
+			//SoundMgr.currentMusic = SoundMgr.some_music;
+			
 		}
 		
 		override public function update():void

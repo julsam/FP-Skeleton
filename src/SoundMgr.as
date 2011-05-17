@@ -6,7 +6,7 @@ package
 	{
 		//[Embed(source="somesoundeffect.mp3")] public static const SOME_SOUND_EFFECT:Class;
 		
-		//[Embed(source="somemusic.mp3")] public static const SOME_MUSIC:Class;
+		//[Embed(source="../assets/sfx/chrushedout.mp3")] public static const SOME_MUSIC:Class;
 		
 		//public static var some_music:Sfx = new Sfx(SOME_MUSIC);
 		
@@ -30,7 +30,7 @@ package
 		
 		public static function playSound(name:String, pan:Number=0, callback:Function=null):void
 		{
-			var s:Sfx = new Sfx(this[name.toUpperCase()], callback);
+			var s:Sfx = new Sfx(name.toUpperCase(), callback);
 			s.play(G.volumeSound, pan);
 		}
 	}
