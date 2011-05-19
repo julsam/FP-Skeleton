@@ -9,6 +9,7 @@ package
 	import net.flashpunk.Graphic;
 	import net.flashpunk.World;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.graphics.Text;
 	import net.flashpunk.graphics.Tilemap;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
@@ -17,6 +18,7 @@ package
 	
 	public class Game extends BaseGame
 	{		
+		public var myTextEntity:Entity;
 		override public function begin():void
 		{
 			// Level size
@@ -24,7 +26,6 @@ package
 			FP.height = G.screenHeight;
 			
 			//SoundMgr.currentMusic = SoundMgr.some_music;
-			
 		}
 		
 		override public function update():void

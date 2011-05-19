@@ -12,13 +12,16 @@ package
 	{
 		
 		public function Main():void 
-		{
+		{			
 			super(G.screenWidth, G.screenHeight, 60, false);
 		}
 		
 		override public function init():void
-		{
+		{			
 			super.init();
+			
+			Kongregate.connect(FP.stage);
+			Kongregate.submit("score", 0);
 			
 			FP.screen.scale = 1;
 			FP.screen.color = 0x8c9192;
