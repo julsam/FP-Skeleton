@@ -1,5 +1,7 @@
 package
 {
+	import worlds.*;
+	
 	import flash.display.*;
 	import flash.ui.ContextMenu;
 	
@@ -7,9 +9,10 @@ package
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Text;
 	import net.flashpunk.utils.Data;
-		
+			
 	public class Main extends Engine
 	{
+		private var allowedDomain:Boolean = false;
 		
 		public function Main():void 
 		{			
@@ -17,8 +20,13 @@ package
 		}
 		
 		override public function init():void
-		{			
+		{
 			super.init();
+			
+			if (Utils.checkDomain(["bender-labs.org", "allinlabs.net", "kongregate.com"]))
+			{
+				allowedDomain = true;
+			}
 			
 			Kongregate.connect(FP.stage);
 			Kongregate.submit("score", 0);
@@ -39,7 +47,12 @@ package
 			contextMenu = new ContextMenu();
 			contextMenu.hideBuiltInItems();
 			
-			FP.world = new Game();
+			if (allowedDomain)
+				FP.world = new Game();
+			else
+			{
+				FP.world = new SiteLocked();
+			}
 		}	
 		
 		override public function setStageProperties():void

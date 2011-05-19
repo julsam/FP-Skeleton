@@ -1,5 +1,8 @@
 package
 {	
+	import worlds.BaseGame;
+	import entities.TextEntity;
+	
 	import flash.display.BitmapData;
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
@@ -13,9 +16,7 @@ package
 	import net.flashpunk.graphics.Tilemap;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
-	
-	import worlds.BaseGame;
-	
+		
 	public class Game extends BaseGame
 	{		
 		public var myTextEntity:Entity;
@@ -26,10 +27,25 @@ package
 			FP.height = G.screenHeight;
 			
 			//SoundMgr.currentMusic = SoundMgr.some_music;
+			
+			
+			Text.size = 16;		
+			
+			myTextEntity = new Entity(0, 0);
+			
+			myTextEntity.x = (FP.width / 2);
+			myTextEntity.y = (FP.height / 2);
+			
+			add(myTextEntity);
 		}
 		
 		override public function update():void
-		{			
+		{
+			if (Input.mousePressed)
+			{		
+				myTextEntity.graphic = new Text(Kongregate.getUsername());
+			}
+			
 			super.update();
 		}
 
